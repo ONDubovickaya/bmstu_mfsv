@@ -1,0 +1,10 @@
+digraph init {
+size="8,10";
+  GT [shape=box,style=dotted,label="init"];
+  GT -> S1;
+	S1 -> S2  [color=red,style=bold,label="(run factorial(7,child_channel))"];
+	S2 -> S3  [color=red,style=bold,label="child_channel?factorial_result.msg_type,factorial_result.msg_data"];
+	S3 -> S4  [color=black,style=solid,label="printf('%d! = %d ',7,factorial_result.msg_data)"];
+	S4 -> S0  [color=black,style=solid,label="-end-"];
+  S4 [color=blue,style=bold,shape=box];
+}
