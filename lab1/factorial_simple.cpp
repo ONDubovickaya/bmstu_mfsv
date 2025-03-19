@@ -11,11 +11,11 @@ struct Message {
 
 Message factorial(int n) {
     if (n <= 1) {
-        return {BC, 1}; // Базовый случай: 0! и 1! равны 1
+        return {BC, 1}; // базовый случай: 0! и 1! равны 1
         
     } else {
-        Message msg = factorial(n - 1); // Рекурсивный вызов
-        return {RC, n * msg.msg_data}; // Возвращаем результат
+        Message msg = factorial(n - 1); // рекурсивный вызов
+        return {RC, n * msg.msg_data}; // возвращаем р-т вычисления факториала
     }
 }
 
