@@ -1,0 +1,18 @@
+digraph p_factorial {
+size="8,10";
+  GT [shape=box,style=dotted,label="factorial"];
+  GT -> S12;
+	S12 -> S2  [color=black,style=solid,label="((n<=1))"];
+	S12 -> S6  [color=black,style=solid,label="((n>=2))"];
+	S2 -> S3  [color=black,style=solid,label="msg.msg_type = BC"];
+	S3 -> S4  [color=black,style=solid,label="msg.msg_data = 1"];
+	S4 -> S14  [color=red,style=bold,label="parent_channel!msg.msg_type,msg.msg_data"];
+	S14 -> S0  [color=black,style=solid,label="-end-"];
+  S14 [color=blue,style=bold,shape=box];
+	S6 -> S7  [color=red,style=bold,label="(run factorial((n-1),child_channel))"];
+	S7 -> S8  [color=red,style=bold,label="child_channel?msg.msg_type,msg.msg_data"];
+	S8 -> S9  [color=black,style=solid,label="result = msg.msg_data"];
+	S9 -> S10  [color=black,style=solid,label="msg.msg_type = RC"];
+	S10 -> S11  [color=black,style=solid,label="msg.msg_data = (n*result)"];
+	S11 -> S14  [color=red,style=bold,label="parent_channel!msg.msg_type,msg.msg_data"];
+}
