@@ -1,0 +1,73 @@
+  0:	proc  - (:root:) creates proc  0 (:init:)
+Starting factorial with pid 1
+  1:	proc  0 (:init::1) creates proc  1 (factorial)
+  1:	proc  0 (:init::1) factorial.pml:39 (state 1)	[(run factorial(7,child_channel))]
+  2:	proc  1 (factorial:1) factorial.pml:22 (state 5)	[((n>=2))]
+Starting factorial with pid 2
+  3:	proc  1 (factorial:1) creates proc  2 (factorial)
+  3:	proc  1 (factorial:1) factorial.pml:23 (state 6)	[(run factorial((n-1),child_channel))]
+  4:	proc  2 (factorial:1) factorial.pml:22 (state 5)	[((n>=2))]
+Starting factorial with pid 3
+  5:	proc  2 (factorial:1) creates proc  3 (factorial)
+  5:	proc  2 (factorial:1) factorial.pml:23 (state 6)	[(run factorial((n-1),child_channel))]
+  6:	proc  3 (factorial:1) factorial.pml:22 (state 5)	[((n>=2))]
+Starting factorial with pid 4
+  7:	proc  3 (factorial:1) creates proc  4 (factorial)
+  7:	proc  3 (factorial:1) factorial.pml:23 (state 6)	[(run factorial((n-1),child_channel))]
+  8:	proc  4 (factorial:1) factorial.pml:22 (state 5)	[((n>=2))]
+Starting factorial with pid 5
+  9:	proc  4 (factorial:1) creates proc  5 (factorial)
+  9:	proc  4 (factorial:1) factorial.pml:23 (state 6)	[(run factorial((n-1),child_channel))]
+ 10:	proc  5 (factorial:1) factorial.pml:22 (state 5)	[((n>=2))]
+Starting factorial with pid 6
+ 11:	proc  5 (factorial:1) creates proc  6 (factorial)
+ 11:	proc  5 (factorial:1) factorial.pml:23 (state 6)	[(run factorial((n-1),child_channel))]
+ 12:	proc  6 (factorial:1) factorial.pml:22 (state 5)	[((n>=2))]
+Starting factorial with pid 7
+ 13:	proc  6 (factorial:1) creates proc  7 (factorial)
+ 13:	proc  6 (factorial:1) factorial.pml:23 (state 6)	[(run factorial((n-1),child_channel))]
+ 14:	proc  7 (factorial:1) factorial.pml:16 (state 1)	[((n<=1))]
+ 15:	proc  7 (factorial:1) factorial.pml:17 (state 2)	[msg.msg_type = BC]
+ 16:	proc  7 (factorial:1) factorial.pml:18 (state 3)	[msg.msg_data = 1]
+ 17:	proc  7 (factorial:1) factorial.pml:20 (state 4)	[parent_channel!msg.msg_type,msg.msg_data]
+ 18:	proc  7 (factorial:1) terminates
+ 19:	proc  6 (factorial:1) factorial.pml:24 (state 7)	[child_channel?msg.msg_type,msg.msg_data]
+ 20:	proc  6 (factorial:1) factorial.pml:26 (state 8)	[result = msg.msg_data]
+ 21:	proc  6 (factorial:1) factorial.pml:28 (state 9)	[msg.msg_type = RC]
+ 22:	proc  6 (factorial:1) factorial.pml:29 (state 10)	[msg.msg_data = (n*result)]
+ 23:	proc  6 (factorial:1) factorial.pml:31 (state 11)	[parent_channel!msg.msg_type,msg.msg_data]
+ 24:	proc  6 (factorial:1) terminates
+ 25:	proc  5 (factorial:1) factorial.pml:24 (state 7)	[child_channel?msg.msg_type,msg.msg_data]
+ 26:	proc  5 (factorial:1) factorial.pml:26 (state 8)	[result = msg.msg_data]
+ 27:	proc  5 (factorial:1) factorial.pml:28 (state 9)	[msg.msg_type = RC]
+ 28:	proc  5 (factorial:1) factorial.pml:29 (state 10)	[msg.msg_data = (n*result)]
+ 29:	proc  5 (factorial:1) factorial.pml:31 (state 11)	[parent_channel!msg.msg_type,msg.msg_data]
+ 30:	proc  4 (factorial:1) factorial.pml:24 (state 7)	[child_channel?msg.msg_type,msg.msg_data]
+ 31:	proc  4 (factorial:1) factorial.pml:26 (state 8)	[result = msg.msg_data]
+ 32:	proc  4 (factorial:1) factorial.pml:28 (state 9)	[msg.msg_type = RC]
+ 34:	proc  4 (factorial:1) factorial.pml:29 (state 10)	[msg.msg_data = (n*result)]
+ 35:	proc  4 (factorial:1) factorial.pml:31 (state 11)	[parent_channel!msg.msg_type,msg.msg_data]
+ 37:	proc  3 (factorial:1) factorial.pml:24 (state 7)	[child_channel?msg.msg_type,msg.msg_data]
+ 37:	proc  5 (factorial:1) terminates
+ 37:	proc  4 (factorial:1) terminates
+ 38:	proc  3 (factorial:1) factorial.pml:26 (state 8)	[result = msg.msg_data]
+ 39:	proc  3 (factorial:1) factorial.pml:28 (state 9)	[msg.msg_type = RC]
+ 40:	proc  3 (factorial:1) factorial.pml:29 (state 10)	[msg.msg_data = (n*result)]
+ 41:	proc  3 (factorial:1) factorial.pml:31 (state 11)	[parent_channel!msg.msg_type,msg.msg_data]
+ 43:	proc  2 (factorial:1) factorial.pml:24 (state 7)	[child_channel?msg.msg_type,msg.msg_data]
+ 43:	proc  3 (factorial:1) terminates
+ 44:	proc  2 (factorial:1) factorial.pml:26 (state 8)	[result = msg.msg_data]
+ 45:	proc  2 (factorial:1) factorial.pml:28 (state 9)	[msg.msg_type = RC]
+ 46:	proc  2 (factorial:1) factorial.pml:29 (state 10)	[msg.msg_data = (n*result)]
+ 47:	proc  2 (factorial:1) factorial.pml:31 (state 11)	[parent_channel!msg.msg_type,msg.msg_data]
+ 48:	proc  1 (factorial:1) factorial.pml:24 (state 7)	[child_channel?msg.msg_type,msg.msg_data]
+ 50:	proc  1 (factorial:1) factorial.pml:26 (state 8)	[result = msg.msg_data]
+ 51:	proc  1 (factorial:1) factorial.pml:28 (state 9)	[msg.msg_type = RC]
+ 52:	proc  1 (factorial:1) factorial.pml:29 (state 10)	[msg.msg_data = (n*result)]
+ 52:	proc  2 (factorial:1) terminates
+ 53:	proc  1 (factorial:1) factorial.pml:31 (state 11)	[parent_channel!msg.msg_type,msg.msg_data]
+ 54:	proc  0 (:init::1) factorial.pml:40 (state 2)	[child_channel?factorial_result.msg_type,factorial_result.msg_data]
+ 55:	proc  0 (:init::1) factorial.pml:41 (state 3)	[printf('%d! = %d\\n',7,factorial_result.msg_data)]
+ 56:	proc  1 (factorial:1) terminates
+ 56:	proc  0 (:init::1) terminates
+8 processes created
