@@ -1,0 +1,23 @@
+digraph init {
+size="8,10";
+  GT [shape=box,style=dotted,label="init"];
+  GT -> S11;
+	S11 -> S8  [color=black,style=dashed,label="i = 0"];
+	S8 -> S3  [color=black,style=dashed,label="((i<2))"];
+	S8 -> S7  [color=black,style=dashed,label="((i>=2))"];
+	S3 -> S4  [color=black,style=dashed,label="progress[i] = 0"];
+	S4 -> S5  [color=black,style=dashed,label="(run incrementer(i))"];
+	S5 -> S8  [color=black,style=dashed,label="i = (i+1)"];
+	S7 -> S10  [color=black,style=dashed,label="goto :b0"];
+	S10 -> S23  [color=red,style=bold,label="break"];
+	S23 -> S13  [color=black,style=dashed,label="i = 0"];
+	S13 -> S19  [color=black,style=dashed,label="sum = 0"];
+	S19 -> S15  [color=black,style=dashed,label="((i<2))"];
+	S19 -> S21  [color=black,style=dashed,label="((i>=2))"];
+	S15 -> S16  [color=black,style=dashed,label="sum = (sum+progress[i])"];
+	S16 -> S19  [color=black,style=dashed,label="i = (i+1)"];
+	S21 -> S22  [color=black,style=dashed,label="break"];
+	S22 -> S24  [color=red,style=bold,label="assert(((sum<2)||(counter==2)))"];
+	S24 -> S0  [color=blue,style=solid,label="-end-"];
+  S24 [color=blue,style=bold,shape=box];
+}

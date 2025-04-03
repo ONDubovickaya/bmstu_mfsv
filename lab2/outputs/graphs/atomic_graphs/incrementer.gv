@@ -1,0 +1,10 @@
+digraph p_incrementer {
+size="8,10";
+  GT [shape=box,style=dotted,label="incrementer"];
+  GT -> S3;
+	S3 -> S2  [color=black,style=dashed,label="tmp = counter"];
+	S2 -> S4  [color=red,style=bold,label="counter = (tmp+1)"];
+	S4 -> S5  [color=red,style=bold,label="progress[procs_id] = 1"];
+	S5 -> S0  [color=blue,style=solid,label="-end-"];
+  S5 [color=blue,style=bold,shape=box];
+}

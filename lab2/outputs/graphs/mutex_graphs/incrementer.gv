@@ -1,0 +1,18 @@
+digraph p_incrementer {
+size="8,10";
+  GT [shape=box,style=dotted,label="incrementer"];
+  GT -> S10;
+	S10 -> S9  [color=blue,style=solid,label="(1)"];
+	S9 -> S3  [color=black,style=dashed,label="((mutex==0))"];
+	S9 -> S6  [color=black,style=dashed,label="else"];
+	S3 -> S4  [color=black,style=dashed,label="mutex = 1"];
+	S4 -> S13  [color=red,style=bold,label="goto :b0"];
+	S13 -> S14  [color=red,style=bold,label="tmp = counter"];
+	S14 -> S15  [color=red,style=bold,label="counter = (tmp+1)"];
+	S15 -> S16  [color=red,style=bold,label="mutex = 0"];
+	S16 -> S17  [color=red,style=bold,label="progress[procs_id] = 1"];
+	S17 -> S0  [color=black,style=solid,label="-end-"];
+  S17 [color=blue,style=bold,shape=box];
+	S6 -> S8  [color=black,style=dashed,label="(1)"];
+	S8 -> S10  [color=red,style=bold,label=".(goto)"];
+}
