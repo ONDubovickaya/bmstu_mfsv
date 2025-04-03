@@ -1,0 +1,37 @@
+  0:	proc  - (:root:) creates proc  0 (:init:)
+  1:	proc  0 (:init::1) atomic.pml:22 (state 1)	[i = 0]
+  3:	proc  0 (:init::1) atomic.pml:24 (state 2)	[((i<2))]
+  4:	proc  0 (:init::1) atomic.pml:25 (state 3)	[progress[i] = 0]
+Starting incrementer with pid 1
+  5:	proc  0 (:init::1) creates proc  1 (incrementer)
+  5:	proc  0 (:init::1) atomic.pml:26 (state 4)	[(run incrementer(i))]
+  6:	proc  0 (:init::1) atomic.pml:27 (state 5)	[i = (i+1)]
+  7:	proc  0 (:init::1) atomic.pml:24 (state 2)	[((i<2))]
+  8:	proc  0 (:init::1) atomic.pml:25 (state 3)	[progress[i] = 0]
+Starting incrementer with pid 2
+  9:	proc  0 (:init::1) creates proc  2 (incrementer)
+  9:	proc  0 (:init::1) atomic.pml:26 (state 4)	[(run incrementer(i))]
+ 10:	proc  0 (:init::1) atomic.pml:27 (state 5)	[i = (i+1)]
+ 11:	proc  0 (:init::1) atomic.pml:28 (state 6)	[((i>=2))]
+ 12:	proc  0 (:init::1) atomic.pml:23 (state 10)	[break]
+ 13:	proc  2 (incrementer:1) atomic.pml:10 (state 1)	[tmp = counter]
+ 14:	proc  2 (incrementer:1) atomic.pml:11 (state 2)	[counter = (tmp+1)]
+ 15:	proc  1 (incrementer:1) atomic.pml:10 (state 1)	[tmp = counter]
+ 16:	proc  1 (incrementer:1) atomic.pml:11 (state 2)	[counter = (tmp+1)]
+ 17:	proc  0 (:init::1) atomic.pml:33 (state 12)	[i = 0]
+ 18:	proc  0 (:init::1) atomic.pml:34 (state 13)	[sum = 0]
+ 19:	proc  0 (:init::1) atomic.pml:36 (state 14)	[((i<2))]
+ 20:	proc  0 (:init::1) atomic.pml:37 (state 15)	[sum = (sum+progress[i])]
+ 21:	proc  0 (:init::1) atomic.pml:38 (state 16)	[i = (i+1)]
+ 22:	proc  0 (:init::1) atomic.pml:36 (state 14)	[((i<2))]
+ 23:	proc  0 (:init::1) atomic.pml:37 (state 15)	[sum = (sum+progress[i])]
+ 24:	proc  0 (:init::1) atomic.pml:38 (state 16)	[i = (i+1)]
+ 25:	proc  0 (:init::1) atomic.pml:39 (state 17)	[((i>=2))]
+ 26:	proc  0 (:init::1) atomic.pml:35 (state 21)	[break]
+ 27:	proc  0 (:init::1) atomic.pml:41 (state 22)	[assert(((sum<2)||(counter==2)))]
+ 28:	proc  2 (incrementer:1) atomic.pml:14 (state 4)	[progress[procs_id] = 1]
+ 28:	proc  2 (incrementer:1) terminates
+ 29:	proc  1 (incrementer:1) atomic.pml:14 (state 4)	[progress[procs_id] = 1]
+ 29:	proc  1 (incrementer:1) terminates
+ 29:	proc  0 (:init::1) terminates
+3 processes created
