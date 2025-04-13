@@ -1,0 +1,18 @@
+@startuml
+group synchronize
+client -> server: SYN
+server --> client: SYN_ACK
+client -> server: ACK
+end
+
+loop 3 times
+    client -> server: DATA
+    server --> client: ACK
+end
+
+group finalize
+client -> server: FIN
+server --> client: FIN_ACK
+client -> server: ACK
+end
+@enduml

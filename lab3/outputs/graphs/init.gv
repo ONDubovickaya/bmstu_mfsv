@@ -1,0 +1,9 @@
+digraph init {
+size="8,10";
+  GT [shape=box,style=dotted,label="init"];
+  GT -> S1;
+	S1 -> S2  [color=blue,style=solid,label="(run client())"];
+	S2 -> S3  [color=blue,style=solid,label="(run server())"];
+	S3 -> S0  [color=blue,style=solid,label="-end-"];
+  S3 [color=blue,style=bold,shape=box];
+}

@@ -1,0 +1,473 @@
+<svg xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" width="242pt" height="720pt" viewBox="0.00 0.00 242.20 720.00">
+<g id="graph0" class="graph" transform="scale(0.296809 0.296809) rotate(0) translate(4 2421.8)">
+<title>p_client</title>
+<polygon fill="white" stroke="none" points="-4,4 -4,-2421.8 812.01,-2421.8 812.01,4 -4,4"/>
+<!-- GT -->
+<g id="node1" class="node">
+<title>GT</title>
+<polygon fill="none" stroke="black" stroke-dasharray="1,5" points="467,-2417.8 413,-2417.8 413,-2381.8 467,-2381.8 467,-2417.8"/>
+<text text-anchor="middle" x="440" y="-2395.6" font-family="Times,serif" font-size="14.00">client</text>
+</g>
+<!-- S1 -->
+<g id="node2" class="node">
+<title>S1</title>
+<ellipse fill="none" stroke="black" cx="440" cy="-2326.8" rx="27" ry="18"/>
+<text text-anchor="middle" x="440" y="-2322.6" font-family="Times,serif" font-size="14.00">S1</text>
+</g>
+<!-- GT&#45;&gt;S1 -->
+<g id="edge1" class="edge">
+<title>GT-&gt;S1</title>
+<path fill="none" stroke="black" d="M440,-2381.61C440,-2374.03 440,-2364.9 440,-2356.34"/>
+<polygon fill="black" stroke="black" points="443.5,-2356.34 440,-2346.34 436.5,-2356.34 443.5,-2356.34"/>
+</g>
+<!-- S2 -->
+<g id="node3" class="node">
+<title>S2</title>
+<ellipse fill="none" stroke="black" cx="440" cy="-2238" rx="27" ry="18"/>
+<text text-anchor="middle" x="440" y="-2233.8" font-family="Times,serif" font-size="14.00">S2</text>
+</g>
+<!-- S1&#45;&gt;S2 -->
+<g id="edge2" class="edge">
+<title>S1-&gt;S2</title>
+<path fill="none" stroke="blue" d="M440,-2308.65C440,-2296.96 440,-2281.19 440,-2267.62"/>
+<polygon fill="blue" stroke="blue" points="443.5,-2267.92 440,-2257.92 436.5,-2267.92 443.5,-2267.92"/>
+<text text-anchor="middle" x="502.09" y="-2278.2" font-family="Times,serif" font-size="14.00">msg.msg_type = SYN</text>
+</g>
+<!-- S3 -->
+<g id="node4" class="node">
+<title>S3</title>
+<ellipse fill="none" stroke="black" cx="440" cy="-2149.2" rx="27" ry="18"/>
+<text text-anchor="middle" x="440" y="-2145" font-family="Times,serif" font-size="14.00">S3</text>
+</g>
+<!-- S2&#45;&gt;S3 -->
+<g id="edge3" class="edge">
+<title>S2-&gt;S3</title>
+<path fill="none" stroke="blue" d="M440,-2219.85C440,-2208.16 440,-2192.39 440,-2178.82"/>
+<polygon fill="blue" stroke="blue" points="443.5,-2179.12 440,-2169.12 436.5,-2179.12 443.5,-2179.12"/>
+<text text-anchor="middle" x="486.53" y="-2189.4" font-family="Times,serif" font-size="14.00">msg.payload = 0</text>
+</g>
+<!-- S4 -->
+<g id="node5" class="node">
+<title>S4</title>
+<ellipse fill="none" stroke="black" cx="440" cy="-2060.4" rx="27" ry="18"/>
+<text text-anchor="middle" x="440" y="-2056.2" font-family="Times,serif" font-size="14.00">S4</text>
+</g>
+<!-- S3&#45;&gt;S4 -->
+<g id="edge4" class="edge">
+<title>S3-&gt;S4</title>
+<path fill="none" stroke="blue" d="M440,-2131.05C440,-2119.36 440,-2103.59 440,-2090.02"/>
+<polygon fill="blue" stroke="blue" points="443.5,-2090.32 440,-2080.32 436.5,-2090.32 443.5,-2090.32"/>
+<text text-anchor="middle" x="554.69" y="-2100.6" font-family="Times,serif" font-size="14.00">printf('[client] Sending SYN to server.. ')</text>
+</g>
+<!-- S8 -->
+<g id="node6" class="node">
+<title>S8</title>
+<ellipse fill="none" stroke="black" cx="440" cy="-1971.6" rx="27" ry="18"/>
+<text text-anchor="middle" x="440" y="-1967.4" font-family="Times,serif" font-size="14.00">S8</text>
+</g>
+<!-- S4&#45;&gt;S8 -->
+<g id="edge5" class="edge">
+<title>S4-&gt;S8</title>
+<path fill="none" stroke="red" stroke-width="2" d="M440,-2042.25C440,-2030.56 440,-2014.79 440,-2001.22"/>
+<polygon fill="red" stroke="red" stroke-width="2" points="443.5,-2003.04 440,-1993.04 436.5,-2003.04 443.5,-2003.04"/>
+<text text-anchor="middle" x="565.39" y="-2011.8" font-family="Times,serif" font-size="14.00">client_to_server!msg.msg_type,msg.payload</text>
+</g>
+<!-- S6 -->
+<g id="node7" class="node">
+<title>S6</title>
+<ellipse fill="none" stroke="black" cx="440" cy="-1882.8" rx="27" ry="18"/>
+<text text-anchor="middle" x="440" y="-1878.6" font-family="Times,serif" font-size="14.00">S6</text>
+</g>
+<!-- S8&#45;&gt;S6 -->
+<g id="edge6" class="edge">
+<title>S8-&gt;S6</title>
+<path fill="none" stroke="black" stroke-dasharray="5,2" d="M440,-1953.45C440,-1941.76 440,-1925.99 440,-1912.42"/>
+<polygon fill="black" stroke="black" points="443.5,-1912.72 440,-1902.72 436.5,-1912.72 443.5,-1912.72"/>
+<text text-anchor="middle" x="566.17" y="-1923" font-family="Times,serif" font-size="14.00">server_to_client?msg.msg_type,msg.payload</text>
+</g>
+<!-- S7 -->
+<g id="node8" class="node">
+<title>S7</title>
+<ellipse fill="none" stroke="black" cx="440" cy="-1794" rx="27" ry="18"/>
+<text text-anchor="middle" x="440" y="-1789.8" font-family="Times,serif" font-size="14.00">S7</text>
+</g>
+<!-- S6&#45;&gt;S7 -->
+<g id="edge7" class="edge">
+<title>S6-&gt;S7</title>
+<path fill="none" stroke="black" stroke-dasharray="5,2" d="M440,-1864.65C440,-1852.96 440,-1837.19 440,-1823.62"/>
+<polygon fill="black" stroke="black" points="443.5,-1823.92 440,-1813.92 436.5,-1823.92 443.5,-1823.92"/>
+<text text-anchor="middle" x="546.08" y="-1834.2" font-family="Times,serif" font-size="14.00">assert((msg.msg_type==SYN_ACK))</text>
+</g>
+<!-- S9 -->
+<g id="node9" class="node">
+<title>S9</title>
+<ellipse fill="none" stroke="black" cx="440" cy="-1705.2" rx="27" ry="18"/>
+<text text-anchor="middle" x="440" y="-1701" font-family="Times,serif" font-size="14.00">S9</text>
+</g>
+<!-- S7&#45;&gt;S9 -->
+<g id="edge8" class="edge">
+<title>S7-&gt;S9</title>
+<path fill="none" stroke="red" stroke-width="2" d="M440,-1775.85C440,-1764.16 440,-1748.39 440,-1734.82"/>
+<polygon fill="red" stroke="red" stroke-width="2" points="443.5,-1736.64 440,-1726.64 436.5,-1736.64 443.5,-1736.64"/>
+<text text-anchor="middle" x="580.73" y="-1745.4" font-family="Times,serif" font-size="14.00">printf('[client] Received SYN_ACK from server ')</text>
+</g>
+<!-- S10 -->
+<g id="node10" class="node">
+<title>S10</title>
+<ellipse fill="none" stroke="black" cx="440" cy="-1616.4" rx="27" ry="18"/>
+<text text-anchor="middle" x="440" y="-1612.2" font-family="Times,serif" font-size="14.00">S10</text>
+</g>
+<!-- S9&#45;&gt;S10 -->
+<g id="edge9" class="edge">
+<title>S9-&gt;S10</title>
+<path fill="none" stroke="blue" d="M440,-1687.05C440,-1675.36 440,-1659.59 440,-1646.02"/>
+<polygon fill="blue" stroke="blue" points="443.5,-1646.32 440,-1636.32 436.5,-1646.32 443.5,-1646.32"/>
+<text text-anchor="middle" x="502.87" y="-1656.6" font-family="Times,serif" font-size="14.00">msg.msg_type = ACK</text>
+</g>
+<!-- S11 -->
+<g id="node11" class="node">
+<title>S11</title>
+<ellipse fill="none" stroke="black" cx="440" cy="-1527.6" rx="27" ry="18"/>
+<text text-anchor="middle" x="440" y="-1523.4" font-family="Times,serif" font-size="14.00">S11</text>
+</g>
+<!-- S10&#45;&gt;S11 -->
+<g id="edge10" class="edge">
+<title>S10-&gt;S11</title>
+<path fill="none" stroke="blue" d="M440,-1598.25C440,-1586.56 440,-1570.79 440,-1557.22"/>
+<polygon fill="blue" stroke="blue" points="443.5,-1557.52 440,-1547.52 436.5,-1557.52 443.5,-1557.52"/>
+<text text-anchor="middle" x="486.53" y="-1567.8" font-family="Times,serif" font-size="14.00">msg.payload = 0</text>
+</g>
+<!-- S12 -->
+<g id="node12" class="node">
+<title>S12</title>
+<ellipse fill="none" stroke="black" cx="440" cy="-1438.8" rx="27" ry="18"/>
+<text text-anchor="middle" x="440" y="-1434.6" font-family="Times,serif" font-size="14.00">S12</text>
+</g>
+<!-- S11&#45;&gt;S12 -->
+<g id="edge11" class="edge">
+<title>S11-&gt;S12</title>
+<path fill="none" stroke="blue" d="M440,-1509.45C440,-1497.76 440,-1481.99 440,-1468.42"/>
+<polygon fill="blue" stroke="blue" points="443.5,-1468.72 440,-1458.72 436.5,-1468.72 443.5,-1468.72"/>
+<text text-anchor="middle" x="555.47" y="-1479" font-family="Times,serif" font-size="14.00">printf('[client] Sending ACK to server.. ')</text>
+</g>
+<!-- S13 -->
+<g id="node13" class="node">
+<title>S13</title>
+<ellipse fill="none" stroke="black" cx="440" cy="-1350" rx="27" ry="18"/>
+<text text-anchor="middle" x="440" y="-1345.8" font-family="Times,serif" font-size="14.00">S13</text>
+</g>
+<!-- S12&#45;&gt;S13 -->
+<g id="edge12" class="edge">
+<title>S12-&gt;S13</title>
+<path fill="none" stroke="red" stroke-width="2" d="M440,-1420.65C440,-1408.96 440,-1393.19 440,-1379.62"/>
+<polygon fill="red" stroke="red" stroke-width="2" points="443.5,-1381.44 440,-1371.44 436.5,-1381.44 443.5,-1381.44"/>
+<text text-anchor="middle" x="565.39" y="-1390.2" font-family="Times,serif" font-size="14.00">client_to_server!msg.msg_type,msg.payload</text>
+</g>
+<!-- S14 -->
+<g id="node14" class="node">
+<title>S14</title>
+<ellipse fill="none" stroke="black" cx="440" cy="-1261.2" rx="27" ry="18"/>
+<text text-anchor="middle" x="440" y="-1257" font-family="Times,serif" font-size="14.00">S14</text>
+</g>
+<!-- S13&#45;&gt;S14 -->
+<g id="edge13" class="edge">
+<title>S13-&gt;S14</title>
+<path fill="none" stroke="blue" d="M440,-1331.85C440,-1320.16 440,-1304.39 440,-1290.82"/>
+<polygon fill="blue" stroke="blue" points="443.5,-1291.12 440,-1281.12 436.5,-1291.12 443.5,-1291.12"/>
+<text text-anchor="middle" x="452.89" y="-1301.4" font-family="Times,serif" font-size="14.00">i = 0</text>
+</g>
+<!-- S27 -->
+<g id="node15" class="node">
+<title>S27</title>
+<ellipse fill="none" stroke="black" cx="440" cy="-1172.4" rx="27" ry="18"/>
+<text text-anchor="middle" x="440" y="-1168.2" font-family="Times,serif" font-size="14.00">S27</text>
+</g>
+<!-- S14&#45;&gt;S27 -->
+<g id="edge14" class="edge">
+<title>S14-&gt;S27</title>
+<path fill="none" stroke="blue" d="M440,-1243.05C440,-1231.36 440,-1215.59 440,-1202.02"/>
+<polygon fill="blue" stroke="blue" points="443.5,-1202.32 440,-1192.32 436.5,-1202.32 443.5,-1202.32"/>
+<text text-anchor="middle" x="452.89" y="-1212.6" font-family="Times,serif" font-size="14.00">i = 1</text>
+</g>
+<!-- S16 -->
+<g id="node16" class="node">
+<title>S16</title>
+<ellipse fill="none" stroke="black" cx="313" cy="-1083.6" rx="27" ry="18"/>
+<text text-anchor="middle" x="313" y="-1079.4" font-family="Times,serif" font-size="14.00">S16</text>
+</g>
+<!-- S27&#45;&gt;S16 -->
+<g id="edge15" class="edge">
+<title>S27-&gt;S16</title>
+<path fill="none" stroke="blue" d="M419.58,-1160.16C407.96,-1153.57 393.26,-1144.89 380.67,-1136.4 366.3,-1126.71 350.91,-1115.04 338.45,-1105.24"/>
+<polygon fill="blue" stroke="blue" points="340.74,-1102.59 330.73,-1099.11 336.38,-1108.07 340.74,-1102.59"/>
+<text text-anchor="middle" x="403.34" y="-1123.8" font-family="Times,serif" font-size="14.00">((i&lt;=3))</text>
+</g>
+<!-- S30 -->
+<g id="node17" class="node">
+<title>S30</title>
+<ellipse fill="none" stroke="black" cx="504" cy="-1083.6" rx="27" ry="18"/>
+<text text-anchor="middle" x="504" y="-1079.4" font-family="Times,serif" font-size="14.00">S30</text>
+</g>
+<!-- S27&#45;&gt;S30 -->
+<g id="edge16" class="edge">
+<title>S27-&gt;S30</title>
+<path fill="none" stroke="blue" d="M451.44,-1155.88C460.94,-1143 474.63,-1124.44 485.65,-1109.49"/>
+<polygon fill="blue" stroke="blue" points="488.43,-1111.62 491.54,-1101.49 482.79,-1107.47 488.43,-1111.62"/>
+<text text-anchor="middle" x="488.62" y="-1123.8" font-family="Times,serif" font-size="14.00">else</text>
+</g>
+<!-- S17 -->
+<g id="node18" class="node">
+<title>S17</title>
+<ellipse fill="none" stroke="black" cx="241" cy="-994.8" rx="27" ry="18"/>
+<text text-anchor="middle" x="241" y="-990.6" font-family="Times,serif" font-size="14.00">S17</text>
+</g>
+<!-- S16&#45;&gt;S17 -->
+<g id="edge17" class="edge">
+<title>S16-&gt;S17</title>
+<path fill="none" stroke="blue" d="M300.46,-1067.48C289.48,-1054.24 273.34,-1034.79 260.65,-1019.49"/>
+<polygon fill="blue" stroke="blue" points="263.68,-1017.66 254.61,-1012.2 258.3,-1022.13 263.68,-1017.66"/>
+<text text-anchor="middle" x="350.98" y="-1035" font-family="Times,serif" font-size="14.00">msg.msg_type = DATA</text>
+</g>
+<!-- S31 -->
+<g id="node25" class="node">
+<title>S31</title>
+<ellipse fill="none" stroke="black" cx="524" cy="-994.8" rx="27" ry="18"/>
+<text text-anchor="middle" x="524" y="-990.6" font-family="Times,serif" font-size="14.00">S31</text>
+</g>
+<!-- S30&#45;&gt;S31 -->
+<g id="edge25" class="edge">
+<title>S30-&gt;S31</title>
+<path fill="none" stroke="blue" d="M507.95,-1065.45C510.69,-1053.56 514.4,-1037.46 517.56,-1023.74"/>
+<polygon fill="blue" stroke="blue" points="520.88,-1024.92 519.72,-1014.39 514.06,-1023.35 520.88,-1024.92"/>
+<text text-anchor="middle" x="575.16" y="-1035" font-family="Times,serif" font-size="14.00">msg.msg_type = FIN</text>
+</g>
+<!-- S18 -->
+<g id="node19" class="node">
+<title>S18</title>
+<ellipse fill="none" stroke="black" cx="43" cy="-906" rx="27" ry="18"/>
+<text text-anchor="middle" x="43" y="-901.8" font-family="Times,serif" font-size="14.00">S18</text>
+</g>
+<!-- S17&#45;&gt;S18 -->
+<g id="edge18" class="edge">
+<title>S17-&gt;S18</title>
+<path fill="none" stroke="blue" d="M218.67,-984.01C183.75,-968.7 116.01,-939.01 75.62,-921.3"/>
+<polygon fill="blue" stroke="blue" points="77.2,-918.17 66.63,-917.36 74.39,-924.58 77.2,-918.17"/>
+<text text-anchor="middle" x="204.7" y="-946.2" font-family="Times,serif" font-size="14.00">msg.payload = i</text>
+</g>
+<!-- S19 -->
+<g id="node20" class="node">
+<title>S19</title>
+<ellipse fill="none" stroke="black" cx="27" cy="-817.2" rx="27" ry="18"/>
+<text text-anchor="middle" x="27" y="-813" font-family="Times,serif" font-size="14.00">S19</text>
+</g>
+<!-- S18&#45;&gt;S19 -->
+<g id="edge19" class="edge">
+<title>S18-&gt;S19</title>
+<path fill="none" stroke="blue" d="M34.08,-888.74C31.38,-882.99 28.77,-876.37 27.39,-870 25.79,-862.62 25.2,-854.5 25.12,-846.93"/>
+<polygon fill="blue" stroke="blue" points="28.62,-847.25 25.33,-837.18 21.62,-847.1 28.62,-847.25"/>
+<text text-anchor="middle" x="226.69" y="-857.4" font-family="Times,serif" font-size="14.00">printf('[client] Sending DATA (payload=%d) to server.. ',msg.payload)</text>
+</g>
+<!-- S23 -->
+<g id="node21" class="node">
+<title>S23</title>
+<ellipse fill="none" stroke="black" cx="31" cy="-728.4" rx="27" ry="18"/>
+<text text-anchor="middle" x="31" y="-724.2" font-family="Times,serif" font-size="14.00">S23</text>
+</g>
+<!-- S19&#45;&gt;S23 -->
+<g id="edge20" class="edge">
+<title>S19-&gt;S23</title>
+<path fill="none" stroke="red" stroke-width="2" d="M27.79,-799.05C28.33,-787.36 29.06,-771.59 29.68,-758.02"/>
+<polygon fill="red" stroke="red" stroke-width="2" points="33.09,-759.98 30.06,-749.83 26.1,-759.66 33.09,-759.98"/>
+<text text-anchor="middle" x="154.75" y="-768.6" font-family="Times,serif" font-size="14.00">client_to_server!msg.msg_type,msg.payload</text>
+</g>
+<!-- S21 -->
+<g id="node22" class="node">
+<title>S21</title>
+<ellipse fill="none" stroke="black" cx="48" cy="-639.6" rx="27" ry="18"/>
+<text text-anchor="middle" x="48" y="-635.4" font-family="Times,serif" font-size="14.00">S21</text>
+</g>
+<!-- S23&#45;&gt;S21 -->
+<g id="edge21" class="edge">
+<title>S23-&gt;S21</title>
+<path fill="none" stroke="black" stroke-dasharray="5,2" d="M34.36,-710.25C36.66,-698.48 39.78,-682.59 42.45,-668.95"/>
+<polygon fill="black" stroke="black" points="45.87,-669.68 44.36,-659.2 39,-668.34 45.87,-669.68"/>
+<text text-anchor="middle" x="167.19" y="-679.8" font-family="Times,serif" font-size="14.00">server_to_client?msg.msg_type,msg.payload</text>
+</g>
+<!-- S22 -->
+<g id="node23" class="node">
+<title>S22</title>
+<ellipse fill="none" stroke="black" cx="115" cy="-550.8" rx="27" ry="18"/>
+<text text-anchor="middle" x="115" y="-546.6" font-family="Times,serif" font-size="14.00">S22</text>
+</g>
+<!-- S21&#45;&gt;S22 -->
+<g id="edge22" class="edge">
+<title>S21-&gt;S22</title>
+<path fill="none" stroke="black" stroke-dasharray="5,2" d="M59.98,-623.08C70.08,-610 84.7,-591.05 96.34,-575.98"/>
+<polygon fill="black" stroke="black" points="98.86,-578.44 102.2,-568.38 93.32,-574.16 98.86,-578.44"/>
+<text text-anchor="middle" x="176.08" y="-591" font-family="Times,serif" font-size="14.00">assert((msg.msg_type==ACK))</text>
+</g>
+<!-- S24 -->
+<g id="node24" class="node">
+<title>S24</title>
+<ellipse fill="none" stroke="black" cx="278" cy="-462" rx="27" ry="18"/>
+<text text-anchor="middle" x="278" y="-457.8" font-family="Times,serif" font-size="14.00">S24</text>
+</g>
+<!-- S22&#45;&gt;S24 -->
+<g id="edge23" class="edge">
+<title>S22-&gt;S24</title>
+<path fill="none" stroke="red" stroke-width="2" d="M110.93,-532.98C109.28,-521.81 109.33,-507.5 117.34,-498 132.82,-479.65 197.31,-470.31 239.72,-466.05"/>
+<polygon fill="red" stroke="red" stroke-width="2" points="238.4,-469.69 248.03,-465.27 237.74,-462.72 238.4,-469.69"/>
+<text text-anchor="middle" x="271.67" y="-502.2" font-family="Times,serif" font-size="14.00">printf('[client] Received ACK for DATA from server ')</text>
+</g>
+<!-- S24&#45;&gt;S27 -->
+<g id="edge24" class="edge">
+<title>S24-&gt;S27</title>
+<path fill="none" stroke="blue" d="M304.56,-466.01C342.33,-470.82 408.89,-481.42 426,-498 443.13,-514.59 440,-525.95 440,-549.8 440,-1084.6 440,-1084.6 440,-1084.6 440,-1104 440,-1125.84 440,-1142.76"/>
+<polygon fill="blue" stroke="blue" points="436.5,-1142.59 440,-1152.59 443.5,-1142.59 436.5,-1142.59"/>
+<text text-anchor="middle" x="463.45" y="-813" font-family="Times,serif" font-size="14.00">i = (i+1)</text>
+</g>
+<!-- S32 -->
+<g id="node26" class="node">
+<title>S32</title>
+<ellipse fill="none" stroke="black" cx="530" cy="-906" rx="27" ry="18"/>
+<text text-anchor="middle" x="530" y="-901.8" font-family="Times,serif" font-size="14.00">S32</text>
+</g>
+<!-- S31&#45;&gt;S32 -->
+<g id="edge26" class="edge">
+<title>S31-&gt;S32</title>
+<path fill="none" stroke="blue" d="M525.19,-976.65C525.99,-964.96 527.08,-949.19 528.02,-935.62"/>
+<polygon fill="blue" stroke="blue" points="531.49,-936.14 528.69,-925.92 524.51,-935.66 531.49,-936.14"/>
+<text text-anchor="middle" x="574.06" y="-946.2" font-family="Times,serif" font-size="14.00">msg.payload = 0</text>
+</g>
+<!-- S33 -->
+<g id="node27" class="node">
+<title>S33</title>
+<ellipse fill="none" stroke="black" cx="532" cy="-817.2" rx="27" ry="18"/>
+<text text-anchor="middle" x="532" y="-813" font-family="Times,serif" font-size="14.00">S33</text>
+</g>
+<!-- S32&#45;&gt;S33 -->
+<g id="edge27" class="edge">
+<title>S32-&gt;S33</title>
+<path fill="none" stroke="blue" d="M530.4,-887.85C530.66,-876.16 531.03,-860.39 531.34,-846.82"/>
+<polygon fill="blue" stroke="blue" points="534.83,-847.2 531.56,-837.12 527.83,-847.04 534.83,-847.2"/>
+<text text-anchor="middle" x="643.14" y="-857.4" font-family="Times,serif" font-size="14.00">printf('[client] Sending FIN to server.. ')</text>
+</g>
+<!-- S37 -->
+<g id="node28" class="node">
+<title>S37</title>
+<ellipse fill="none" stroke="black" cx="532" cy="-728.4" rx="27" ry="18"/>
+<text text-anchor="middle" x="532" y="-724.2" font-family="Times,serif" font-size="14.00">S37</text>
+</g>
+<!-- S33&#45;&gt;S37 -->
+<g id="edge28" class="edge">
+<title>S33-&gt;S37</title>
+<path fill="none" stroke="red" stroke-width="2" d="M532,-799.05C532,-787.36 532,-771.59 532,-758.02"/>
+<polygon fill="red" stroke="red" stroke-width="2" points="535.5,-759.84 532,-749.84 528.5,-759.84 535.5,-759.84"/>
+<text text-anchor="middle" x="657.39" y="-768.6" font-family="Times,serif" font-size="14.00">client_to_server!msg.msg_type,msg.payload</text>
+</g>
+<!-- S35 -->
+<g id="node29" class="node">
+<title>S35</title>
+<ellipse fill="none" stroke="black" cx="532" cy="-639.6" rx="27" ry="18"/>
+<text text-anchor="middle" x="532" y="-635.4" font-family="Times,serif" font-size="14.00">S35</text>
+</g>
+<!-- S37&#45;&gt;S35 -->
+<g id="edge29" class="edge">
+<title>S37-&gt;S35</title>
+<path fill="none" stroke="black" stroke-dasharray="5,2" d="M532,-710.25C532,-698.56 532,-682.79 532,-669.22"/>
+<polygon fill="black" stroke="black" points="535.5,-669.52 532,-659.52 528.5,-669.52 535.5,-669.52"/>
+<text text-anchor="middle" x="658.17" y="-679.8" font-family="Times,serif" font-size="14.00">server_to_client?msg.msg_type,msg.payload</text>
+</g>
+<!-- S36 -->
+<g id="node30" class="node">
+<title>S36</title>
+<ellipse fill="none" stroke="black" cx="532" cy="-550.8" rx="27" ry="18"/>
+<text text-anchor="middle" x="532" y="-546.6" font-family="Times,serif" font-size="14.00">S36</text>
+</g>
+<!-- S35&#45;&gt;S36 -->
+<g id="edge30" class="edge">
+<title>S35-&gt;S36</title>
+<path fill="none" stroke="black" stroke-dasharray="5,2" d="M532,-621.45C532,-609.76 532,-593.99 532,-580.42"/>
+<polygon fill="black" stroke="black" points="535.5,-580.72 532,-570.72 528.5,-580.72 535.5,-580.72"/>
+<text text-anchor="middle" x="635.36" y="-591" font-family="Times,serif" font-size="14.00">assert((msg.msg_type==FIN_ACK))</text>
+</g>
+<!-- S38 -->
+<g id="node31" class="node">
+<title>S38</title>
+<ellipse fill="none" stroke="black" cx="532" cy="-462" rx="27" ry="18"/>
+<text text-anchor="middle" x="532" y="-457.8" font-family="Times,serif" font-size="14.00">S38</text>
+</g>
+<!-- S36&#45;&gt;S38 -->
+<g id="edge31" class="edge">
+<title>S36-&gt;S38</title>
+<path fill="none" stroke="red" stroke-width="2" d="M532,-532.65C532,-520.96 532,-505.19 532,-491.62"/>
+<polygon fill="red" stroke="red" stroke-width="2" points="535.5,-493.44 532,-483.44 528.5,-493.44 535.5,-493.44"/>
+<text text-anchor="middle" x="670" y="-502.2" font-family="Times,serif" font-size="14.00">printf('[client] Received FIN_ACK from server ')</text>
+</g>
+<!-- S39 -->
+<g id="node32" class="node">
+<title>S39</title>
+<ellipse fill="none" stroke="black" cx="532" cy="-373.2" rx="27" ry="18"/>
+<text text-anchor="middle" x="532" y="-369" font-family="Times,serif" font-size="14.00">S39</text>
+</g>
+<!-- S38&#45;&gt;S39 -->
+<g id="edge32" class="edge">
+<title>S38-&gt;S39</title>
+<path fill="none" stroke="blue" d="M532,-443.85C532,-432.16 532,-416.39 532,-402.82"/>
+<polygon fill="blue" stroke="blue" points="535.5,-403.12 532,-393.12 528.5,-403.12 535.5,-403.12"/>
+<text text-anchor="middle" x="594.87" y="-413.4" font-family="Times,serif" font-size="14.00">msg.msg_type = ACK</text>
+</g>
+<!-- S40 -->
+<g id="node33" class="node">
+<title>S40</title>
+<ellipse fill="none" stroke="black" cx="532" cy="-284.4" rx="27" ry="18"/>
+<text text-anchor="middle" x="532" y="-280.2" font-family="Times,serif" font-size="14.00">S40</text>
+</g>
+<!-- S39&#45;&gt;S40 -->
+<g id="edge33" class="edge">
+<title>S39-&gt;S40</title>
+<path fill="none" stroke="blue" d="M532,-355.05C532,-343.36 532,-327.59 532,-314.02"/>
+<polygon fill="blue" stroke="blue" points="535.5,-314.32 532,-304.32 528.5,-314.32 535.5,-314.32"/>
+<text text-anchor="middle" x="578.53" y="-324.6" font-family="Times,serif" font-size="14.00">msg.payload = 0</text>
+</g>
+<!-- S41 -->
+<g id="node34" class="node">
+<title>S41</title>
+<ellipse fill="none" stroke="black" cx="532" cy="-195.6" rx="27" ry="18"/>
+<text text-anchor="middle" x="532" y="-191.4" font-family="Times,serif" font-size="14.00">S41</text>
+</g>
+<!-- S40&#45;&gt;S41 -->
+<g id="edge34" class="edge">
+<title>S40-&gt;S41</title>
+<path fill="none" stroke="blue" d="M532,-266.25C532,-254.56 532,-238.79 532,-225.22"/>
+<polygon fill="blue" stroke="blue" points="535.5,-225.52 532,-215.52 528.5,-225.52 535.5,-225.52"/>
+<text text-anchor="middle" x="647.47" y="-235.8" font-family="Times,serif" font-size="14.00">printf('[client] Sending ACK to server.. ')</text>
+</g>
+<!-- S42 -->
+<g id="node35" class="node">
+<title>S42</title>
+<polygon fill="none" stroke="blue" stroke-width="2" points="559,-124.8 505,-124.8 505,-88.8 559,-88.8 559,-124.8"/>
+<text text-anchor="middle" x="532" y="-102.6" font-family="Times,serif" font-size="14.00">S42</text>
+</g>
+<!-- S41&#45;&gt;S42 -->
+<g id="edge35" class="edge">
+<title>S41-&gt;S42</title>
+<path fill="none" stroke="red" stroke-width="2" d="M532,-177.45C532,-165.76 532,-149.99 532,-136.42"/>
+<polygon fill="red" stroke="red" stroke-width="2" points="535.5,-138.24 532,-128.24 528.5,-138.24 535.5,-138.24"/>
+<text text-anchor="middle" x="657.39" y="-147" font-family="Times,serif" font-size="14.00">client_to_server!msg.msg_type,msg.payload</text>
+</g>
+<!-- S0 -->
+<g id="node36" class="node">
+<title>S0</title>
+<ellipse fill="none" stroke="black" cx="532" cy="-18" rx="27" ry="18"/>
+<text text-anchor="middle" x="532" y="-13.8" font-family="Times,serif" font-size="14.00">S0</text>
+</g>
+<!-- S42&#45;&gt;S0 -->
+<g id="edge36" class="edge">
+<title>S42-&gt;S0</title>
+<path fill="none" stroke="blue" d="M532,-88.65C532,-76.96 532,-61.19 532,-47.62"/>
+<polygon fill="blue" stroke="blue" points="535.5,-47.92 532,-37.92 528.5,-47.92 535.5,-47.92"/>
+<text text-anchor="middle" x="546.77" y="-58.2" font-family="Times,serif" font-size="14.00">-end-</text>
+</g>
+</g>
+</svg>

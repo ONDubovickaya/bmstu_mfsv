@@ -1,0 +1,137 @@
+  0:	proc  - (:root:) creates proc  0 (:init:)
+Starting client with pid 1
+  1:	proc  0 (:init::1) creates proc  1 (client)
+  1:	proc  0 (:init::1) tcp_protocol_simple.pml:123 (state 1)	[(run client())]
+  2:	proc  1 (client:1) tcp_protocol_simple.pml:15 (state 1)	[msg.msg_type = SYN]
+Starting server with pid 2
+  3:	proc  0 (:init::1) creates proc  2 (server)
+  3:	proc  0 (:init::1) tcp_protocol_simple.pml:124 (state 2)	[(run server())]
+  4:	proc  1 (client:1) tcp_protocol_simple.pml:16 (state 2)	[msg.payload = 0]
+[client] Sending SYN to server..
+  5:	proc  1 (client:1) tcp_protocol_simple.pml:18 (state 3)	[printf('[client] Sending SYN to server..\\n')]
+  6:	proc  1 (client:1) tcp_protocol_simple.pml:19 (state 4)	[client_to_server!msg.msg_type,msg.payload]
+  7:	proc  2 (server:1) tcp_protocol_simple.pml:71 (state 1)	[client_to_server?msg.msg_type,msg.payload]
+  8:	proc  2 (server:1) tcp_protocol_simple.pml:72 (state 2)	[assert((msg.msg_type==SYN))]
+[server] Received SYN from client
+  9:	proc  2 (server:1) tcp_protocol_simple.pml:73 (state 3)	[printf('[server] Received SYN from client\\n')]
+ 10:	proc  2 (server:1) tcp_protocol_simple.pml:76 (state 5)	[msg.msg_type = SYN_ACK]
+ 11:	proc  2 (server:1) tcp_protocol_simple.pml:77 (state 6)	[msg.payload = 0]
+[server] Sending SYN_ACK to client..
+ 12:	proc  2 (server:1) tcp_protocol_simple.pml:79 (state 7)	[printf('[server] Sending SYN_ACK to client..\\n')]
+ 13:	proc  2 (server:1) tcp_protocol_simple.pml:80 (state 8)	[server_to_client!msg.msg_type,msg.payload]
+ 14:	proc  1 (client:1) tcp_protocol_simple.pml:22 (state 5)	[server_to_client?msg.msg_type,msg.payload]
+ 15:	proc  1 (client:1) tcp_protocol_simple.pml:23 (state 6)	[assert((msg.msg_type==SYN_ACK))]
+[client] Received SYN_ACK from server
+ 16:	proc  1 (client:1) tcp_protocol_simple.pml:24 (state 7)	[printf('[client] Received SYN_ACK from server\\n')]
+ 17:	proc  1 (client:1) tcp_protocol_simple.pml:27 (state 9)	[msg.msg_type = ACK]
+ 18:	proc  1 (client:1) tcp_protocol_simple.pml:28 (state 10)	[msg.payload = 0]
+[client] Sending ACK to server..
+ 19:	proc  1 (client:1) tcp_protocol_simple.pml:30 (state 11)	[printf('[client] Sending ACK to server..\\n')]
+ 20:	proc  1 (client:1) tcp_protocol_simple.pml:31 (state 12)	[client_to_server!msg.msg_type,msg.payload]
+ 21:	proc  1 (client:1) tcp_protocol_simple.pml:34 (state 13)	[i = 0]
+ 22:	proc  2 (server:1) tcp_protocol_simple.pml:83 (state 9)	[client_to_server?msg.msg_type,msg.payload]
+ 23:	proc  2 (server:1) tcp_protocol_simple.pml:84 (state 10)	[assert((msg.msg_type==ACK))]
+[server] Received ACK from client
+ 24:	proc  2 (server:1) tcp_protocol_simple.pml:85 (state 11)	[printf('[server] Received ACK from client\\n')]
+ 25:	proc  1 (client:1) tcp_protocol_simple.pml:34 (state 14)	[i = 1]
+ 27:	proc  1 (client:1) tcp_protocol_simple.pml:34 (state 15)	[((i<=3))]
+ 28:	proc  2 (server:1) tcp_protocol_simple.pml:89 (state 13)	[i = 0]
+ 29:	proc  1 (client:1) tcp_protocol_simple.pml:35 (state 16)	[msg.msg_type = DATA]
+ 30:	proc  2 (server:1) tcp_protocol_simple.pml:89 (state 14)	[i = 1]
+ 31:	proc  1 (client:1) tcp_protocol_simple.pml:36 (state 17)	[msg.payload = i]
+[client] Sending DATA (payload=1) to server..
+ 33:	proc  1 (client:1) tcp_protocol_simple.pml:38 (state 18)	[printf('[client] Sending DATA (payload=%d) to server..\\n',msg.payload)]
+ 34:	proc  2 (server:1) tcp_protocol_simple.pml:89 (state 15)	[((i<=3))]
+ 35:	proc  1 (client:1) tcp_protocol_simple.pml:39 (state 19)	[client_to_server!msg.msg_type,msg.payload]
+ 36:	proc  2 (server:1) tcp_protocol_simple.pml:91 (state 16)	[client_to_server?msg.msg_type,msg.payload]
+ 37:	proc  2 (server:1) tcp_protocol_simple.pml:92 (state 17)	[assert((msg.msg_type==DATA))]
+[server] Received DATA from client: 1
+ 38:	proc  2 (server:1) tcp_protocol_simple.pml:93 (state 18)	[printf('[server] Received DATA from client: %d\\n',msg.payload)]
+ 39:	proc  2 (server:1) tcp_protocol_simple.pml:96 (state 20)	[msg.msg_type = ACK]
+ 40:	proc  2 (server:1) tcp_protocol_simple.pml:97 (state 21)	[msg.payload = 0]
+[server] Sending ACK for DATA to client..
+ 41:	proc  2 (server:1) tcp_protocol_simple.pml:99 (state 22)	[printf('[server] Sending ACK for DATA to client..\\n')]
+ 42:	proc  2 (server:1) tcp_protocol_simple.pml:100 (state 23)	[server_to_client!msg.msg_type,msg.payload]
+ 43:	proc  2 (server:1) tcp_protocol_simple.pml:89 (state 24)	[i = (i+1)]
+ 44:	proc  1 (client:1) tcp_protocol_simple.pml:42 (state 20)	[server_to_client?msg.msg_type,msg.payload]
+ 45:	proc  1 (client:1) tcp_protocol_simple.pml:43 (state 21)	[assert((msg.msg_type==ACK))]
+[client] Received ACK for DATA from server
+ 46:	proc  1 (client:1) tcp_protocol_simple.pml:44 (state 22)	[printf('[client] Received ACK for DATA from server\\n')]
+ 48:	proc  1 (client:1) tcp_protocol_simple.pml:34 (state 24)	[i = (i+1)]
+ 49:	proc  2 (server:1) tcp_protocol_simple.pml:89 (state 15)	[((i<=3))]
+ 51:	proc  1 (client:1) tcp_protocol_simple.pml:34 (state 15)	[((i<=3))]
+ 52:	proc  1 (client:1) tcp_protocol_simple.pml:35 (state 16)	[msg.msg_type = DATA]
+ 53:	proc  1 (client:1) tcp_protocol_simple.pml:36 (state 17)	[msg.payload = i]
+[client] Sending DATA (payload=2) to server..
+ 54:	proc  1 (client:1) tcp_protocol_simple.pml:38 (state 18)	[printf('[client] Sending DATA (payload=%d) to server..\\n',msg.payload)]
+ 55:	proc  1 (client:1) tcp_protocol_simple.pml:39 (state 19)	[client_to_server!msg.msg_type,msg.payload]
+ 56:	proc  2 (server:1) tcp_protocol_simple.pml:91 (state 16)	[client_to_server?msg.msg_type,msg.payload]
+ 57:	proc  2 (server:1) tcp_protocol_simple.pml:92 (state 17)	[assert((msg.msg_type==DATA))]
+[server] Received DATA from client: 2
+ 58:	proc  2 (server:1) tcp_protocol_simple.pml:93 (state 18)	[printf('[server] Received DATA from client: %d\\n',msg.payload)]
+ 59:	proc  2 (server:1) tcp_protocol_simple.pml:96 (state 20)	[msg.msg_type = ACK]
+ 60:	proc  2 (server:1) tcp_protocol_simple.pml:97 (state 21)	[msg.payload = 0]
+[server] Sending ACK for DATA to client..
+ 61:	proc  2 (server:1) tcp_protocol_simple.pml:99 (state 22)	[printf('[server] Sending ACK for DATA to client..\\n')]
+ 62:	proc  2 (server:1) tcp_protocol_simple.pml:100 (state 23)	[server_to_client!msg.msg_type,msg.payload]
+ 63:	proc  2 (server:1) tcp_protocol_simple.pml:89 (state 24)	[i = (i+1)]
+ 64:	proc  1 (client:1) tcp_protocol_simple.pml:42 (state 20)	[server_to_client?msg.msg_type,msg.payload]
+ 65:	proc  1 (client:1) tcp_protocol_simple.pml:43 (state 21)	[assert((msg.msg_type==ACK))]
+[client] Received ACK for DATA from server
+ 66:	proc  1 (client:1) tcp_protocol_simple.pml:44 (state 22)	[printf('[client] Received ACK for DATA from server\\n')]
+ 67:	proc  1 (client:1) tcp_protocol_simple.pml:34 (state 24)	[i = (i+1)]
+ 70:	proc  1 (client:1) tcp_protocol_simple.pml:34 (state 15)	[((i<=3))]
+ 71:	proc  2 (server:1) tcp_protocol_simple.pml:89 (state 15)	[((i<=3))]
+ 72:	proc  1 (client:1) tcp_protocol_simple.pml:35 (state 16)	[msg.msg_type = DATA]
+ 73:	proc  1 (client:1) tcp_protocol_simple.pml:36 (state 17)	[msg.payload = i]
+[client] Sending DATA (payload=3) to server..
+ 74:	proc  1 (client:1) tcp_protocol_simple.pml:38 (state 18)	[printf('[client] Sending DATA (payload=%d) to server..\\n',msg.payload)]
+ 75:	proc  1 (client:1) tcp_protocol_simple.pml:39 (state 19)	[client_to_server!msg.msg_type,msg.payload]
+ 76:	proc  2 (server:1) tcp_protocol_simple.pml:91 (state 16)	[client_to_server?msg.msg_type,msg.payload]
+ 77:	proc  2 (server:1) tcp_protocol_simple.pml:92 (state 17)	[assert((msg.msg_type==DATA))]
+[server] Received DATA from client: 3
+ 78:	proc  2 (server:1) tcp_protocol_simple.pml:93 (state 18)	[printf('[server] Received DATA from client: %d\\n',msg.payload)]
+ 79:	proc  2 (server:1) tcp_protocol_simple.pml:96 (state 20)	[msg.msg_type = ACK]
+ 80:	proc  2 (server:1) tcp_protocol_simple.pml:97 (state 21)	[msg.payload = 0]
+[server] Sending ACK for DATA to client..
+ 81:	proc  2 (server:1) tcp_protocol_simple.pml:99 (state 22)	[printf('[server] Sending ACK for DATA to client..\\n')]
+ 82:	proc  2 (server:1) tcp_protocol_simple.pml:100 (state 23)	[server_to_client!msg.msg_type,msg.payload]
+ 83:	proc  2 (server:1) tcp_protocol_simple.pml:89 (state 24)	[i = (i+1)]
+ 84:	proc  1 (client:1) tcp_protocol_simple.pml:42 (state 20)	[server_to_client?msg.msg_type,msg.payload]
+ 85:	proc  1 (client:1) tcp_protocol_simple.pml:43 (state 21)	[assert((msg.msg_type==ACK))]
+[client] Received ACK for DATA from server
+ 86:	proc  1 (client:1) tcp_protocol_simple.pml:44 (state 22)	[printf('[client] Received ACK for DATA from server\\n')]
+ 87:	proc  1 (client:1) tcp_protocol_simple.pml:34 (state 24)	[i = (i+1)]
+ 89:	proc  2 (server:1) tcp_protocol_simple.pml:101 (state 25)	[else]
+ 92:	proc  1 (client:1) tcp_protocol_simple.pml:46 (state 25)	[else]
+ 94:	proc  1 (client:1) tcp_protocol_simple.pml:48 (state 30)	[msg.msg_type = FIN]
+ 95:	proc  1 (client:1) tcp_protocol_simple.pml:49 (state 31)	[msg.payload = 0]
+[client] Sending FIN to server..
+ 96:	proc  1 (client:1) tcp_protocol_simple.pml:51 (state 32)	[printf('[client] Sending FIN to server..\\n')]
+ 97:	proc  1 (client:1) tcp_protocol_simple.pml:52 (state 33)	[client_to_server!msg.msg_type,msg.payload]
+ 98:	proc  2 (server:1) tcp_protocol_simple.pml:104 (state 30)	[client_to_server?msg.msg_type,msg.payload]
+ 99:	proc  2 (server:1) tcp_protocol_simple.pml:105 (state 31)	[assert((msg.msg_type==FIN))]
+[server] Received FIN from client
+100:	proc  2 (server:1) tcp_protocol_simple.pml:106 (state 32)	[printf('[server] Received FIN from client\\n')]
+101:	proc  2 (server:1) tcp_protocol_simple.pml:109 (state 34)	[msg.msg_type = FIN_ACK]
+102:	proc  2 (server:1) tcp_protocol_simple.pml:110 (state 35)	[msg.payload = 0]
+[server] Sending FIN_ACK to client..
+103:	proc  2 (server:1) tcp_protocol_simple.pml:112 (state 36)	[printf('[server] Sending FIN_ACK to client..\\n')]
+104:	proc  2 (server:1) tcp_protocol_simple.pml:113 (state 37)	[server_to_client!msg.msg_type,msg.payload]
+105:	proc  1 (client:1) tcp_protocol_simple.pml:55 (state 34)	[server_to_client?msg.msg_type,msg.payload]
+106:	proc  1 (client:1) tcp_protocol_simple.pml:56 (state 35)	[assert((msg.msg_type==FIN_ACK))]
+[client] Received FIN_ACK from server
+107:	proc  1 (client:1) tcp_protocol_simple.pml:57 (state 36)	[printf('[client] Received FIN_ACK from server\\n')]
+108:	proc  1 (client:1) tcp_protocol_simple.pml:60 (state 38)	[msg.msg_type = ACK]
+109:	proc  1 (client:1) tcp_protocol_simple.pml:61 (state 39)	[msg.payload = 0]
+[client] Sending ACK to server..
+110:	proc  1 (client:1) tcp_protocol_simple.pml:63 (state 40)	[printf('[client] Sending ACK to server..\\n')]
+111:	proc  1 (client:1) tcp_protocol_simple.pml:64 (state 41)	[client_to_server!msg.msg_type,msg.payload]
+112:	proc  2 (server:1) tcp_protocol_simple.pml:116 (state 38)	[client_to_server?msg.msg_type,msg.payload]
+113:	proc  2 (server:1) tcp_protocol_simple.pml:117 (state 39)	[assert((msg.msg_type==ACK))]
+[server] Received ACK from client
+114:	proc  2 (server:1) tcp_protocol_simple.pml:118 (state 40)	[printf('[server] Received ACK from client\\n')]
+114:	proc  2 (server:1) terminates
+114:	proc  1 (client:1) terminates
+114:	proc  0 (:init::1) terminates
+3 processes created

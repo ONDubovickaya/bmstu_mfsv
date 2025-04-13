@@ -1,0 +1,40 @@
+using statement merging
+Starting client with pid 1
+  1:	proc  0 (:init::1) tcp_protocol_error.pml:117 (state 1)	[(run client())]
+  2:	proc  1 (client:1) tcp_protocol_error.pml:15 (state 1)	[msg.msg_type = SYN]
+  2:	proc  1 (client:1) tcp_protocol_error.pml:16 (state 2)	[msg.payload = 0]
+[client] Sending SYN to server..
+  2:	proc  1 (client:1) tcp_protocol_error.pml:18 (state 3)	[printf('[client] Sending SYN to server..\\n')]
+Starting server with pid 2
+  3:	proc  0 (:init::1) tcp_protocol_error.pml:118 (state 2)	[(run server())]
+  4:	proc  1 (client:1) tcp_protocol_error.pml:19 (state 4)	[client_to_server!msg.msg_type,msg.payload]
+  5:	proc  2 (server:1) tcp_protocol_error.pml:65 (state 1)	[client_to_server?msg.msg_type,msg.payload]
+  5:	proc  2 (server:1) tcp_protocol_error.pml:66 (state 2)	[assert((msg.msg_type==SYN))]
+[server] Received SYN from client
+  5:	proc  2 (server:1) tcp_protocol_error.pml:67 (state 3)	[printf('[server] Received SYN from client\\n')]
+  5:	proc  2 (server:1) tcp_protocol_error.pml:70 (state 5)	[msg.msg_type = SYN_ACK]
+  5:	proc  2 (server:1) tcp_protocol_error.pml:71 (state 6)	[msg.payload = 0]
+[server] Sending SYN_ACK to client..
+  5:	proc  2 (server:1) tcp_protocol_error.pml:73 (state 7)	[printf('[server] Sending SYN_ACK to client..\\n')]
+  6:	proc  2 (server:1) tcp_protocol_error.pml:74 (state 8)	[server_to_client!msg.msg_type,msg.payload]
+  7:	proc  1 (client:1) tcp_protocol_error.pml:22 (state 5)	[server_to_client?msg.msg_type,msg.payload]
+  7:	proc  1 (client:1) tcp_protocol_error.pml:23 (state 6)	[assert((msg.msg_type==SYN_ACK))]
+[client] Received SYN_ACK from server
+  7:	proc  1 (client:1) tcp_protocol_error.pml:24 (state 7)	[printf('[client] Received SYN_ACK from server\\n')]
+  7:	proc  1 (client:1) tcp_protocol_error.pml:28 (state 9)	[i = 0]
+  7:	proc  1 (client:1) tcp_protocol_error.pml:28 (state 10)	[i = 1]
+  8:	proc  1 (client:1) tcp_protocol_error.pml:28 (state 11)	[((i<=3))]
+  8:	proc  1 (client:1) tcp_protocol_error.pml:29 (state 12)	[msg.msg_type = DATA]
+  8:	proc  1 (client:1) tcp_protocol_error.pml:30 (state 13)	[msg.payload = i]
+[client] Sending DATA (payload=1) to server..
+  8:	proc  1 (client:1) tcp_protocol_error.pml:32 (state 14)	[printf('[client] Sending DATA (payload=%d) to server..\\n',msg.payload)]
+  9:	proc  1 (client:1) tcp_protocol_error.pml:33 (state 15)	[client_to_server!msg.msg_type,msg.payload]
+ 10:	proc  2 (server:1) tcp_protocol_error.pml:77 (state 9)	[client_to_server?msg.msg_type,msg.payload]
+spin: tcp_protocol_error.pml:78, Error: assertion violated
+spin: text of failed assertion: assert((msg.msg_type==ACK))
+#processes: 3
+ 10:	proc  2 (server:1) tcp_protocol_error.pml:78 (state 10)
+ 10:	proc  1 (client:1) tcp_protocol_error.pml:35 (state 19)
+ 10:	proc  0 (:init::1) tcp_protocol_error.pml:119 (state 3)
+3 processes created
+Exit-Status 0
